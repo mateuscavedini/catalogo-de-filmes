@@ -1,0 +1,11 @@
+<h3>Filmes dirigidos por <%= @director.name %></h3>
+
+<ul>
+  <% @director.movies.each do |movie| %>
+    <li>
+      <%= link_to movie.title, movie_path(movie.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Editar', edit_director_path %>

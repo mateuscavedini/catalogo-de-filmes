@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <h1><%= link_to 'Catálogo', root_path %></h1>
+    <nav>
+      <ul>
+        <li><%= link_to 'Adicionar Gênero', new_genre_path %></li>
+        <li><%= link_to 'Adicionar Diretor', new_director_path %></li>
+        <li><%= link_to 'Adicionar Filme', new_movie_path %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
