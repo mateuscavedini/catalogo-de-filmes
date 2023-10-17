@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @released_movies = Movie.released
+    @unreleased_movies = Movie.unreleased
   end
   
   def show
@@ -47,5 +48,12 @@ class MoviesController < ApplicationController
     end
 
     render :edit
+  end
+
+  def release
+    movie = Movie.find(params[:id])
+    movie.released!
+
+    redirect_to movie_path(movie.id)
   end
 end

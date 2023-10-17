@@ -2,6 +2,7 @@
 
 <dl>
   <dt><strong>Título: </strong><%= @movie.title %></dt>
+  <dd><strong>Status: </strong><%= @movie.status %></dd>
   <dd><strong>Ano de Lançamento: </strong><%= @movie.year %></dd>
   <dd><strong>Sinopse: </strong><%= @movie.plot %></dd>
   <dd><strong>País de Origem: </strong><%= @movie.country %></dd>
@@ -11,3 +12,6 @@
 </dl>
 
 <%= link_to 'Editar', edit_movie_path %>
+<% if @movie.unreleased? %>
+  <%= button_to 'Filme lançado', release_movie_path, {method: 'patch'} %>
+<% end %>

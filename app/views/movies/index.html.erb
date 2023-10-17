@@ -1,7 +1,15 @@
 <h2>Lista de Filmes</h2>
 
+<h3>Lançados</h3>
 <ul>
-  <% @movies.each do |movie| %>
+  <% @released_movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_path(movie.id) %> - <%= movie.year %></li>
+  <% end %>
+</ul>
+
+<h3>Em breve</h3>
+<ul>
+  <% @unreleased_movies.each do |movie| %>
     <li><%= link_to movie.title, movie_path(movie.id) %> - <%= movie.year %></li>
   <% end %>
 </ul>
